@@ -25,8 +25,11 @@ SECRET_KEY = '*soha$)bc3l@13hw#$0h-a&x3_is*x_#z+eng16pyhschtdxoe'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Hosts production
+ALLOWED_HOSTS = ['shoppyapi.herokuapp.com']
 
+# Hosts Development
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -43,6 +46,9 @@ INSTALLED_APPS = [
     # local aplications
     'apps.shop',
     'apps.users',
+    # library deploy heroku
+    'gunicorn',
+    'psycopg2',
 ]
 
 REST_FRAMEWORK = {
@@ -74,7 +80,7 @@ ROOT_URLCONF = 'api.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'apps/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -101,12 +107,16 @@ WSGI_APPLICATION = 'api.wsgi.application'
 # }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_db',
-        'USER': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'django_db',
+    #     'USER': 'postgres',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # }
 }
 
 # Password validation
@@ -146,3 +156,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Deploy Heroku Configurations
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = 'media'
