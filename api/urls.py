@@ -1,5 +1,6 @@
 from django.urls import path, include
 from django.contrib import admin
+from django.conf.urls.static import static
 from rest_framework.authtoken import views
 # from apps.shop import urls
 
@@ -8,3 +9,6 @@ urlpatterns = [
     path('api/', include('apps.shop.urls')),
     path('api_generate_token/', views.obtain_auth_token),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
