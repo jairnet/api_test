@@ -106,10 +106,11 @@ WSGI_APPLICATION = 'api.wsgi.application'
 #     }
 # }
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # },
+    # Configuration Local
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql',
     #     'NAME': 'django_db',
@@ -117,6 +118,15 @@ DATABASES = {
     #     'HOST': 'localhost',
     #     'PORT': '5432',
     # }
+    # Configuration Heroku Postgres
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd6tqhdg67rt05m',
+        'USER': 'mhzuthnwjwackb',
+        'PASSWORD': 'f88446c2148b87e761ae94a13f17811919f79f45d9cf7de9ddd9857dc318d80d',
+        'HOST': 'ec2-174-129-226-232.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
 }
 
 # Password validation
