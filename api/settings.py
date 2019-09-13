@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['shoppyapi.herokuapp.com']
 
 # Hosts Development
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 # Application definition
 
