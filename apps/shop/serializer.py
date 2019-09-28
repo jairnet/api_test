@@ -8,7 +8,6 @@ class ShopSerializer(serializers.HyperlinkedModelSerializer):
         fields = ['url', 'id', 'name', 'address', 'phone', 'site', 'email', 'country',
             'district', 'city', 'category', 'description']
 
-
 class CategorySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Category
