@@ -3,11 +3,11 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.authtoken import views
-# from apps.shop import urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('apps.shop.urls')),
+    path('api/', include('apps.addressing.urls')),
     path('api_generate_token/', views.obtain_auth_token),
 ]
 

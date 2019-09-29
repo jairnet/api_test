@@ -46,15 +46,16 @@ INSTALLED_APPS = [
     # local aplications
     'apps.shop',
     'apps.users',
+    'apps.addressing',
     # library deploy heroku
     'gunicorn',
     'psycopg2',
 ]
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_AUTHENTICATION_CLASSES': (
-    #         'rest_framework.authentication.TokenAuthentication',
-    # ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+            'rest_framework.authentication.TokenAuthentication',
+    ),
     # 'DEFAULT_PERMISSION_CLASSES': (
     #         'rest_framework.permissions.IsAuthenticated',
     # ),

@@ -20,3 +20,13 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
             if query_set:
                 raise NameError('ID of category is duplicate. \n')
         return Category.objects.create(**validated_data)
+    
+    def update(self, instance, validated_data):
+        """
+        Update and return an existing `Category` instance, given the validated data.
+        """
+        instance.id = validated_data.get('id', instance.id)
+        instance.name = validated_data.get('name', instance.name)
+        instance.code = validated_data.get('code', instance.code)
+        instance.save()
+        return instance
