@@ -27,7 +27,7 @@ class AddressListView(viewsets.ModelViewSet):
             date_address = date(year, month, day)
             queryset = Address.objects.filter(nit=nit, token=token, date_address=date_address)
             return queryset
-        return Response({'error':'requeride nit, token and date'})
+        return json.dumps({'error':'requeride nit, token and date'})
 
 # class AddressListView(viewsets.ModelViewSet):
 #     queryset = Category.objects.all()
