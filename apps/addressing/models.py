@@ -1,11 +1,10 @@
 from django.db import models
-from rest_framework.authtoken.models import Token
+from apps.company.models import Company
+# from rest_framework.authtoken.models import Token
 
 
 class Address(models.Model):
-    name = models.CharField(max_length=20, default='')
-    nit = models.CharField(max_length=20, default='')
-    token = models.ForeignKey(Token, null=True, blank=True, on_delete=models.SET_NULL)
+    company = models.ForeignKey(Company, null=True, blank=True, on_delete=models.SET_NULL)
     date_address = models.DateField(blank=True)
 
     NoPrescripcion = models.CharField(max_length=20, default='')
@@ -24,7 +23,7 @@ class Address(models.Model):
     CodSerTecAEntregar = models.CharField(max_length=20, default='')
 
     class Meta:
-        ordering = ["name"]
+        ordering = ["NoPrescripcion"]
 
     def __str__(self):
-        return self.name
+        return self.NoPrescripcion

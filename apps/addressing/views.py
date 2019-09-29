@@ -26,7 +26,8 @@ class AddressListView(viewsets.ModelViewSet):
             month = int(date_list[1])
             day = int(date_list[2])
             date_address = date(year, month, day)
-            queryset = Address.objects.filter(nit=nit, token=token, date_address=date_address)
+            # queryset = Address.objects.filter(date_address=date_address, company_nit=nit, company_token=token)
+            queryset = Address.objects.filter(company__nit=nit, company__token=token, date_address=date_address)
             return queryset
         return json.dumps({'error':'requeride nit, token and date'})
 
