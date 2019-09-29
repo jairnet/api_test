@@ -19,8 +19,8 @@ class AddressListView(viewsets.ModelViewSet):
     def get_queryset(self):
         nit = self.request.headers.get('nit')
         token = self.request.headers.get('token')
-        date_list = self.request.headers.get('date').split('-')
-        if nit and token and date_list: 
+        if nit and token and date_list:
+            date_list = self.request.headers.get('date').split('-')
             year = int(date_list[0])
             month = int(date_list[1])
             day = int(date_list[2])
