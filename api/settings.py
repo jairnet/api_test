@@ -26,10 +26,10 @@ SECRET_KEY = '*soha$)bc3l@13hw#$0h-a&x3_is*x_#z+eng16pyhschtdxoe'
 DEBUG = True
 
 # Hosts production
-# ALLOWED_HOSTS = ['shoppyapi.herokuapp.com']
+ALLOWED_HOSTS = ['shoppyapi.herokuapp.com']
 
 # Hosts Development
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 # Application definition
 
