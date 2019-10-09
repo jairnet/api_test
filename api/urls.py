@@ -8,6 +8,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('apps.shop.urls')),
     path('api/', include('apps.addressing.urls')),
+    path('api/', include('apps.programs.urls')),
     path('api_generate_token/', views.obtain_auth_token),
 ]
 

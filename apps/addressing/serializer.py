@@ -6,10 +6,11 @@ class AddressSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Address
         fields = [
-            'NoPrescripcion', 'TipoTec', 'ConTec', 'TipoIdPaciente', 'NoIdPaciente', 'NoEntrega',
+            'id', 'NoPrescripcion', 'TipoTec', 'ConTec', 'TipoIdPaciente', 'NoIdPaciente', 'NoEntrega',
             'NoSubEntrega', 'TipoIDProv', 'NoIDProv', 'CodMunEnt', 'FecMaxEnt', 'CantTotAEntregar',
             'DirPaciente', 'CodSerTecAEntregar',
             ]
+       
     
     # def create(self, validated_data):
     #     dict_data = self.context['request'].data
