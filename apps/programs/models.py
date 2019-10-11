@@ -15,9 +15,9 @@ class Program(models.Model):
     TipoIDSedeProv = models.CharField(max_length=2, default='')
     NoIDSedeProv = models.CharField(max_length=9, default='')
     CodSedeProv = models.CharField(max_length=15, default='')
-    CodSerTecAEntregar = models.CharField(max_length=20, default='')
+    CodTecAEntregar = models.CharField(max_length=20, default='')
     CantTotAEntregar = models.CharField(max_length=10, default='')
-    FecProgramacion = models.CharField(max_length=16, default='')
+    FecProgramacion = models.CharField(max_length=10, default='')
     EstProgramacion = models.CharField(max_length=16, default='')
     FechaAnulacion = models.CharField(max_length=16, default='')
 

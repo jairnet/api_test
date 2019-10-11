@@ -7,9 +7,9 @@ class ProgramSerializer(serializers.HyperlinkedModelSerializer):
         model = Program
         fields = [
             'id', 'IDProgramacion', 'NoPrescripcion', 'TipoTec', 'ConTec',
-            'TipoIDPaciente', 'NoIDPaciente', 'NoEntrega', 'FecMaxEnt',
+            'TipoIDPaciente', 'NoIdPaciente', 'NoEntrega', 'FecMaxEnt',
             'TipoIDSedeProv', 'NoIDSedeProv', 'CodSedeProv',
-            'CodSerTecAEntregar', 'FecProgramacion', 'EstProgramacion',
+            'CodTecAEntregar', 'FecProgramacion', 'EstProgramacion',
             'FechaAnulacion',
             ]
     

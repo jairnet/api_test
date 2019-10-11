@@ -23,13 +23,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '*soha$)bc3l@13hw#$0h-a&x3_is*x_#z+eng16pyhschtdxoe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
 
-# Hosts production
-# ALLOWED_HOSTS = ['apimipres.herokuapp.com']
+# Debug in production
+DEBUG = False
+
+# Hosts in production
+ALLOWED_HOSTS = ['apimipres.herokuapp.com']
 
 # Hosts Development
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -49,6 +52,7 @@ INSTALLED_APPS = [
     'apps.addressing',
     'apps.programs',
     'apps.company',
+    'apps.deliveries',
     # library deploy heroku
     'gunicorn',
     'psycopg2',

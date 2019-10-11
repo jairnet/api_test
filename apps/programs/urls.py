@@ -4,7 +4,10 @@ from apps.programs.views import *
 
 
 router = routers.DefaultRouter()
-router.register(r'programming', ProgramListView)
+router.register(r'programming', ProgramPutView)
+router.register(r'programmingdate', ProgramDateView)
+router.register(r'programmingprescription', ProgramPrescriptionView)
+router.register(r'programmingdocument', ProgramDocumentView)
 
 urlpatterns = [
     path('', include(router.urls)),

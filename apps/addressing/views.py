@@ -12,7 +12,7 @@ from .models import Address
 from .serializer import AddressSerializer
 
 
-class AddressListView(viewsets.ModelViewSet):
+class AddressDateView(viewsets.ModelViewSet):
     queryset = Address.objects.all()
     serializer_class = AddressSerializer
 
@@ -27,9 +27,39 @@ class AddressListView(viewsets.ModelViewSet):
             day = int(date_list[2])
             date_address = date(year, month, day)
             queryset = Address.objects.filter(company__nit=nit, company__token=token, date_address=date_address)
-            print('queryset', queryset)
             return queryset
-        return json.dumps({'error':'requeride nit, token and date'})
+        return Response({'error':'requeride nit, token and date'})
+
+
+class AddressPrescriptionView(viewsets.ModelViewSet):
+    queryset = Address.objects.all()
+    serializer_class = AddressSerializer
+
+    def get_queryset(self):
+        nit = self.request.headers.get('nit')
+        token = self.request.headers.get('token')
+        prescription = self.request.headers.get('noPrescripcion')
+        if nit and token and prescription:
+            queryset = Address.objects.filter(company__nit=nit, company__token=token,
+                NoPrescripcion=prescription)
+            return queryset
+        return Response({'error':'requeride nit, token and prescription'})
+
+
+class AddressDocumentView(viewsets.ModelViewSet):
+    queryset = Address.objects.all()
+    serializer_class = AddressSerializer
+
+    def get_queryset(self):
+        nit = self.request.headers.get('nit')
+        token = self.request.headers.get('token')
+        tipodoc = self.request.headers.get('tipodoc')
+        numdoc = self.request.headers.get('numdoc')
+        if nit and token and tipodoc and numdoc:
+            queryset = Address.objects.filter(company__nit=nit, company__token=token,
+                TipoIdPaciente=tipodoc, NoIdPaciente=numdoc)
+            return queryset
+        return Response({'error':'requeride nit, token, type document and ducument number'})
 
 # class AddressListView(viewsets.ModelViewSet):
 #     queryset = Category.objects.all()
