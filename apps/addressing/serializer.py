@@ -6,7 +6,7 @@ class AddressSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Address
         fields = [
-            'id', 'NoPrescripcion', 'TipoTec', 'ConTec', 'TipoIDPaciente', 'NoIdPaciente', 'NoEntrega',
+            'id', 'NoPrescripcion', 'TipoTec', 'ConTec', 'TipoIdPaciente', 'NoIdPaciente', 'NoEntrega',
             'NoSubEntrega', 'TipoIDProv', 'NoIDProv', 'CodMunEnt', 'FecMaxEnt', 'CantTotAEntregar',
             'DirPaciente', 'CodSerTecAEntregar',
             ]
