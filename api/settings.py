@@ -29,10 +29,10 @@ DEBUG = True
 # DEBUG = False
 
 # Hosts in production
-ALLOWED_HOSTS = ['apimipres.herokuapp.com']
+# ALLOWED_HOSTS = ['apimipres.herokuapp.com']
 
 # Hosts Development
-# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = []
 
 # Application definition
 
